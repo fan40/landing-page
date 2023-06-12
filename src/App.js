@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Articles from "./components/Articles";
+import Header from "./components/Header";
+import MidSection from "./components/MidSection";
+import bg from "./images/landing.png"
 
 function App() {
+
+  const styles = {
+    backgroundImage: `url(${bg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className=" h-screen w-screen " style={styles} >
+      <Header />
+
+      <div className="w-full xl:max-w-[1250px] mx-auto px-6 " >
+        <MidSection />
+        <Articles />
+      </div>
+    </main>
   );
 }
 
